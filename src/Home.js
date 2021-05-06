@@ -48,7 +48,7 @@ function Home({setDataFetched, dataFetched}) {
   }
   return (
     <>
-      <MenuBar />
+      {/* <MenuBar /> */}
       <SearchBar filterCountries={filterCountries} />
       <FilterBar dataFetched={dataFetched} filterByRegion={filterByRegion} />
       {/* <Spinner  animation="border" className="spinner, spinner-location"/> */}

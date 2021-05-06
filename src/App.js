@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import "./App.css";
 import Home from "./Home";
 import CountryInfo from "./CountryInfo";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import MenuBar from "./MenuBar";
 
 function App() {
   const [dataFetched, setDataFetched] = useState([]);
   return (
     <>
+      <MenuBar />
+
       <Router>
         <div>
           <Switch>

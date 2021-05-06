@@ -26,15 +26,41 @@ img {
   position: absolute;
   top: 400px;
 }
+.country-info {
+  display: flex;
+  /* justify-content: space-between; */
+}
 
+.country-image-wrapper {
+  width: 50%;
+}
+.country-detail-wrapper {
+  margin-left: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.country-info-maingroup {
+  display: flex;
+}
+.country-info-maingroup-left {
+  margin-right: 10vw;
+}
+.country-info-borders {
+  display: block;
+}
+.country-info-label {
+  font-weight: bold;
+}
 /* 
-  <div className="country-wrapper">
-      <img src={country.flag}></img>
-      <h1>{country.name}</h1>
-      <div className="info wrapper">
-        <h2>Population : {country.population}</h2>
-        <h2>Region : {country.region}</h2>
-        <h2>Capital : {country.capital}</h2>
+  <>
+      <div className="country-info">
+        <div className="country-image-wrapper">
+          <img src={newCountry[0].flag} />
+        </div>
+        <div className="country-detail-wrapper">
+          <p>Region {newCountry[0].region}</p>
+          <p>Sub Region {newCountry[0].subregion}</p>
+        </div>
       </div>
-    </div>
-,m,m */
+    </> */
