@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // let newData = [];
 
-function Home({setDataFetched, dataFetched}) {
+function Home({ setDataFetched, dataFetched }) {
   // const [dataFetched, setDataFetched] = useState([]);
   const [dataToRender, setDataToRender] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -49,10 +49,11 @@ function Home({setDataFetched, dataFetched}) {
   return (
     <>
       {/* <MenuBar /> */}
-      <SearchBar filterCountries={filterCountries} />
-      <FilterBar dataFetched={dataFetched} filterByRegion={filterByRegion} />
-      {/* <Spinner  animation="border" className="spinner, spinner-location"/> */}
-
+      <div className="search-section-wrapper">
+        <SearchBar filterCountries={filterCountries} />
+        <FilterBar dataFetched={dataFetched} filterByRegion={filterByRegion} />
+        {/* <Spinner  animation="border" className="spinner, spinner-location"/> */}
+      </div>
       {loading ? (
         <Spinner animation="border" className="spinner, spinner-location" />
       ) : (

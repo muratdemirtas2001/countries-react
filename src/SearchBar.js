@@ -1,7 +1,7 @@
 function SearchBar({ filterCountries }) {
   return (
     <>
-      <input onChange={filterCountries}></input>
+      <input className="search-input" onChange={filterCountries}></input>
     </>
   );
 }

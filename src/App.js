@@ -12,21 +12,26 @@ function App() {
       <MenuBar />
 
       <Router>
-        <div>
-          <Switch>
-            <Route exact path="/">
-              <Home setDataFetched={setDataFetched} dataFetched={dataFetched} />
-            </Route>
-            <Route path="/about">
-              <Home />
-            </Route>
-            <Route path="/dashboard">
-              <Home />
-            </Route>
-            <Route path="/country/:id">
-              <CountryInfo dataFetched={dataFetched} />
-            </Route>
-          </Switch>
+        <div className="main">
+          <div className="content-wrapper">
+            <Switch>
+              <Route exact path="/">
+                <Home
+                  setDataFetched={setDataFetched}
+                  dataFetched={dataFetched}
+                />
+              </Route>
+              <Route path="/about">
+                <Home />
+              </Route>
+              <Route path="/dashboard">
+                <Home />
+              </Route>
+              <Route path="/country/:id">
+                <CountryInfo dataFetched={dataFetched} />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </Router>
     </>

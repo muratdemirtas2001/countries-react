@@ -7,7 +7,7 @@ function FilterBar({ dataFetched, filterByRegion }) {
 
   console.log(regions);
   return (
-    <select onChange={filterByRegion}>
+    <select className="select-input" onChange={filterByRegion}>
       <option value="">--Find by region--</option>
       <option value="All Regions">All Regions</option>
 
