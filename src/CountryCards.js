@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Country from "./Country";
 function CountryCards({ dataToRender }) {
   return (

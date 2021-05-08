@@ -2,11 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Country({ country }) {
-  
-
   return (
     <div className="country-wrapper">
-      <img src={country.flag}></img>
+      <img src={country.flag} alt={country.name}></img>
       <h3>{country.name}</h3>
       <div className="info wrapper">
         <h5>Population : {country.population}</h5>

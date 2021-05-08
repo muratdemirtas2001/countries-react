@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 function CountryInfo({ dataFetched }) {
   const { id } = useParams();
@@ -26,10 +26,12 @@ function CountryInfo({ dataFetched }) {
   console.log(borders);
   return (
     <>
-    <button onClick={()=>history.goBack()}>Go back</button>
+      <button className="country-info-button" onClick={() => history.goBack()}>
+        &lt;------Back
+      </button>
       <div className="country-info">
         <div className="country-image-wrapper">
-          <img src={flag} />
+          <img src={flag} alt={name} />
         </div>
         <div className="country-detail-wrapper">
           <h1>{name}</h1>
@@ -71,7 +73,11 @@ function CountryInfo({ dataFetched }) {
               <span className="country-info-label">Borders:</span>
             </p>
             {borders.map((border) => {
-              return <button>{border}</button>;
+              return (
+                <button className="country-info-borders-button">
+                  {border}
+                </button>
+              );
             })}
           </div>
         </div>

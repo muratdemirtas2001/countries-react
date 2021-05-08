@@ -1,6 +1,5 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import MenuBar from "./MenuBar";
 import SearchBar from "./SearchBar";
 import FilterBar from "./FilterBar";
 import CountryCards from "./CountryCards";
@@ -15,12 +14,10 @@ function Home({ setDataFetched, dataFetched }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("use efeect called");
     fetch("https://restcountries.eu/rest/v2/all")
       .then((resp) => resp.json())
       .then((data) => {
         setDataFetched(data);
-        // newData = [...data];
         setDataToRender(data);
         setLoading(false);
       });
@@ -48,16 +45,24 @@ function Home({ setDataFetched, dataFetched }) {
   }
   return (
     <>
-      {/* <MenuBar /> */}
-      <div className="search-section-wrapper">
-        <SearchBar filterCountries={filterCountries} />
-        <FilterBar dataFetched={dataFetched} filterByRegion={filterByRegion} />
-        {/* <Spinner  animation="border" className="spinner, spinner-location"/> */}
-      </div>
       {loading ? (
-        <Spinner animation="border" className="spinner, spinner-location" />
+        <>
+          <div className="spinner-wrapper">
+            <Spinner animation="border" size="lg" className="spinner" />
+            <h1>Loading</h1>
+          </div>
+        </>
       ) : (
-        <CountryCards dataToRender={dataToRender} />
+        <>
+          <div className="search-section-wrapper">
+            <SearchBar filterCountries={filterCountries} />
+            <FilterBar
+              dataFetched={dataFetched}
+              filterByRegion={filterByRegion}
+            />
+          </div>
+          <CountryCards dataToRender={dataToRender} />
+        </>
       )}
     </>
   );
