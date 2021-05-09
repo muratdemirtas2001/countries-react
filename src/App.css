@@ -105,6 +105,10 @@ img {
   background-color: hsl(0, 0%, 100%);
   padding: 5px;
   border-radius: 5px;
+  text-decoration: none;
+}
+.country-info-borders-button-link {
+  text-decoration: none;
 }
 .country-info-maingroup {
   display: flex;

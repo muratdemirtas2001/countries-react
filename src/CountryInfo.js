@@ -1,16 +1,17 @@
 import React from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 
 function CountryInfo({ dataFetched }) {
   const { id } = useParams();
   const history = useHistory();
-  console.log(id);
+  // console.log(id);
+  // let borderCountries;
 
-  console.log(dataFetched);
+  // console.log(dataFetched);
   let newCountry = dataFetched.filter((country) => {
     return country.name === id;
   });
-  console.log(newCountry);
+  // console.log(newCountry);
   const {
     flag,
     name,
@@ -23,7 +24,7 @@ function CountryInfo({ dataFetched }) {
     languages,
     borders,
   } = newCountry[0];
-  console.log(borders);
+  // console.log(borders);
   return (
     <>
       <button className="country-info-button" onClick={() => history.goBack()}>
@@ -72,10 +73,16 @@ function CountryInfo({ dataFetched }) {
             <p>
               <span className="country-info-label">Borders:</span>
             </p>
+
             {borders.map((border) => {
+              let borderCountries = dataFetched.filter((country) => {
+                return country.alpha3Code === border;
+              });
               return (
                 <button className="country-info-borders-button">
-                  {border}
+                  <Link className="country-info-borders-button-link"to={`/country/${borderCountries[0].name}`}>
+                    {border}
+                  </Link>
                 </button>
               );
             })}
