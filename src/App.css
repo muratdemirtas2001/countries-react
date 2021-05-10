@@ -6,10 +6,10 @@
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
 
-  background-color: hsl(0, 0%, 100%);
+  /* background-color: hsl(0, 0%, 100%); */
 }
 .menu-wrapper-mode {
   display: flex;
@@ -17,9 +17,24 @@
 }
 
 .main {
-  background-color: hsl(0, 0%, 98%);
+  /* background-color: hsl(0, 0%, 98%); */
   display: flex;
   justify-content: center;
+}
+.dark-mode-background {
+  background-color: hsl(207, 26%, 17%);
+  color: white;
+}
+.dark-mode-element {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+}
+.light-mode-background {
+  background-color: hsl(0, 0%, 98%);
+  color: black;
+}
+.light-mode-element {
+  background-color: hsl(0, 0%, 100%);
 }
 .content-wrapper {
   /* width: 90%; */
@@ -36,11 +51,12 @@
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: none;
+  /* background-color: hsl(0, 0%, 100%); */
 }
 .select-input {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: hsl(0, 0%, 100%);
+  /* background-color: hsl(0, 0%, 100%); */
 }
 .cards-wrapper {
   display: flex;
@@ -53,14 +69,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: hsl(0, 0%, 100%);
+  /* background-color: hsl(0, 0%, 100%); */
   width: 20vw;
   margin: 50px 0px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow: hidden;
 }
-
+div> a:hover {
+  color:black;
+}
+/* .info-wrapper {
+  color: white;
+} */
+.country-link-light-mode {
+  text-decoration: none;
+  color: black;
+}
+.country-link-dark-mode {
+  text-decoration: none;
+  color: white;
+}
 img {
   width: 100%;
 }

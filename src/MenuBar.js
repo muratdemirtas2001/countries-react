@@ -1,10 +1,11 @@
-import { FaMoon } from "react-icons/fa";
-function MenuBar() {
+import { IoMoonOutline } from "react-icons/io5";
+function MenuBar({changeMode,lightMode}) {
+
   return (
-    <div className="menu-wrapper">
+    <div className={lightMode? "menu-wrapper light-mode-element" : "menu-wrapper dark-mode-element"}>
       <h3>Where in the world?</h3>
-      <div className="menu-wrapper-mode">
-        <FaMoon size={20} />
+      <div className="menu-wrapper-mode" onClick={changeMode}>
+        <IoMoonOutline size={20} />
         <h3>Night mode</h3>
       </div>
     </div>

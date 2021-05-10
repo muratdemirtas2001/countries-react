@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // let newData = [];
 
-function Home({ setDataFetched, dataFetched }) {
+function Home({ setDataFetched, dataFetched,lightMode }) {
   // const [dataFetched, setDataFetched] = useState([]);
   const [dataToRender, setDataToRender] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -55,13 +55,14 @@ function Home({ setDataFetched, dataFetched }) {
       ) : (
         <>
           <div className="search-section-wrapper">
-            <SearchBar filterCountries={filterCountries} />
+            <SearchBar filterCountries={filterCountries} lightMode={lightMode} />
             <FilterBar
               dataFetched={dataFetched}
               filterByRegion={filterByRegion}
+              lightMode={lightMode}
             />
           </div>
-          <CountryCards dataToRender={dataToRender} />
+          <CountryCards dataToRender={dataToRender} lightMode={lightMode} />
         </>
       )}
     </>
