@@ -6,10 +6,8 @@ import CountryCards from "./CountryCards";
 import Spinner from "react-bootstrap/Spinner";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// let newData = [];
 
 function Home({ setDataFetched, dataFetched,lightMode }) {
-  // const [dataFetched, setDataFetched] = useState([]);
   const [dataToRender, setDataToRender] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,23 +23,18 @@ function Home({ setDataFetched, dataFetched,lightMode }) {
 
   function filterCountries(e) {
     let inputValue = e.target.value.toUpperCase();
-    // let filteredData = newData.filter((country) => {
     let filteredData = dataFetched.filter((country) => {
       return country.name.toUpperCase().includes(inputValue);
     });
-    // setData(filteredData);
     setDataToRender(filteredData);
   }
 
   function filterByRegion(e) {
-    // console.log(newData)
     let selectValue = e.target.value;
     let filteredData = dataFetched.filter((country) => {
       return country.region === selectValue;
     });
-    // console.log(filteredData)
     setDataToRender(filteredData);
-    // console.log(data)
   }
   return (
     <>

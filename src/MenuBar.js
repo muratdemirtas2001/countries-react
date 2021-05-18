@@ -6,7 +6,7 @@ function MenuBar({changeMode,lightMode}) {
       <h3>Where in the world?</h3>
       <div className="menu-wrapper-mode" onClick={changeMode}>
         <IoMoonOutline size={20} />
-        <h3>Night mode</h3>
+  <h3>{lightMode? "Night Mode": "Light Mode"}</h3>
       </div>
     </div>
   );

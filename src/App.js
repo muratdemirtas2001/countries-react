@@ -7,10 +7,10 @@ import MenuBar from "./MenuBar";
 
 function App() {
   const [dataFetched, setDataFetched] = useState([]);
-  const [lightMode,setLightMode]=useState(true)
-  function changeMode(){
-    console.log("change")
-    setLightMode(!lightMode)
+  const [lightMode, setLightMode] = useState(true);
+  function changeMode() {
+    console.log("change");
+    setLightMode(!lightMode);
   }
   return (
     <>
@@ -18,7 +18,13 @@ function App() {
 
       <Router>
         <div className="main">
-          <div className ={lightMode ? "content-wrapper light-mode-background" : "content-wrapper dark-mode-background"}>
+          <div
+            className={
+              lightMode
+                ? "content-wrapper light-mode-background"
+                : "content-wrapper dark-mode-background"
+            }
+          >
             <Switch>
               <Route exact path="/">
                 <Home
@@ -26,12 +32,6 @@ function App() {
                   dataFetched={dataFetched}
                   lightMode={lightMode}
                 />
-              </Route>
-              <Route path="/about">
-                <Home />
-              </Route>
-              <Route path="/dashboard">
-                <Home />
               </Route>
               <Route path="/country/:id">
                 <CountryInfo dataFetched={dataFetched} />
